@@ -45,7 +45,7 @@ morgan.token('reqData', function(req, res){
   }
   return ''
 })
-app.use(morgan(':method :url :status :res[content-length] - :response-time ms :reqData'))
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :reqData',{immediate: "immediate"}))
 
 app.get('/api/persons', (req, res) => {
     res.json(people)
